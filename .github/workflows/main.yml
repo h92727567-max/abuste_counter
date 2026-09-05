@@ -29,8 +29,12 @@ jobs:
           pip install --upgrade pip
           pip install buildozer==1.5.0 cython==3.0.10
 
+      - name: Pin pip version to avoid a broken pip release
+        run: |
+          echo "pip==24.3.1" > /tmp/pip-constraint.txt
+          echo "PIP_CONSTRAINT=/tmp/pip-constraint.txt" >> $GITHUB_ENV
+
       - name: Build APK (debug)
-        working-directory: ./abuste_counter
         run: |
           yes | buildozer android debug
 
@@ -38,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: abuste-counter-apk
-          path: abuste_counter/bin/*.apk
+          path: bin/*.apk
