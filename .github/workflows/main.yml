@@ -30,6 +30,7 @@ jobs:
           pip install buildozer==1.5.0 cython==3.0.10
 
       - name: Build APK (debug)
+        working-directory: ./abuste_counter
         run: |
           yes | buildozer android debug
 
@@ -37,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: abuste-counter-apk
-          path: bin/*.apk
+          path: abuste_counter/bin/*.apk
