@@ -24,6 +24,12 @@ jobs:
             libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev \
             build-essential
 
+      - name: Set Java 17 as default
+        run: |
+          sudo update-alternatives --set java /usr/lib/jvm/temurin-17-jdk-amd64/bin/java
+          sudo update-alternatives --set javac /usr/lib/jvm/temurin-17-jdk-amd64/bin/javac
+          echo "JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64" >> $GITHUB_ENV
+
       - name: Install buildozer
         run: |
           pip install --upgrade pip
