@@ -10,7 +10,7 @@ version = 0.1
 
 # نکته: sqlite3 بخشی از کتابخانه استاندارد پایتون است و نیازی به
 # افزودن جداگانه به requirements ندارد.
-requirements = python3==3.11.6,kivy==2.3.1,kivymd==2.0.0,arabic_reshaper,python-bidi
+requirements = python3,kivy==2.3.1,kivymd==2.0.0,arabic_reshaper,python-bidi
 
 orientation = portrait
 fullscreen = 0
