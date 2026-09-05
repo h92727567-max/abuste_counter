@@ -35,6 +35,7 @@ jobs:
           echo "PIP_CONSTRAINT=/tmp/pip-constraint.txt" >> $GITHUB_ENV
 
       - name: Build APK (debug)
+        working-directory: ./abuste_counter
         run: |
           yes | buildozer android debug
 
@@ -42,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: abuste-counter-apk
-          path: bin/*.apk
+          path: abuste_counter/bin/*.apk
